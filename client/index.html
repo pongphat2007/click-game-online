@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกมคลิกเป้าหมาย - ออนไลน์</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ฟอร์มล็อกอิน -->
+    <div id="auth-container" class="container">
+        <div class="auth-form">
+            <h2>เกมคลิกเป้าหมาย 🎯</h2>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="ชื่อผู้ใช้" class="form-input">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="รหัสผ่าน" class="form-input">
+            </div>
+            <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-primary">เข้าสู่ระบบ</button>
+                <button id="register-btn" class="btn btn-secondary">สมัครสมาชิก</button>
+            </div>
+            <p id="auth-message" class="message"></p>
+        </div>
+    </div>
+
+    <!-- เกมหลัก -->
+    <div id="game-container" class="container hidden">
+        <div class="header">
+            <div class="user-info">
+                <span>ยินดีต้อนรับ, <span id="current-user"></span></span>
+                <button id="logout-btn" class="btn btn-logout">ออกจากระบบ</button>
+            </div>
+            <h1>เกมคลิกเป้าหมาย 🎯</h1>
+        </div>
+
+        <div class="game-layout">
+            <!-- ส่วนเกม -->
+            <div class="game-section">
+                <div class="game-info">
+                    <div class="info-item">
+                        <span>คะแนน:</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span>เวลาที่เหลือ:</span>
+                        <span id="time">30</span> วินาที
+                    </div>
+                    <div class="info-item">
+                        <span>คะแนนสูงสุด:</span>
+                        <span id="high-score">0</span>
+                    </div>
+                </div>
+                
+                <div class="game-area">
+                    <div id="target" class="target"></div>
+                </div>
+                
+                <div class="controls">
+                    <button id="start-btn" class="btn btn-success">เริ่มเกม</button>
+                    <button id="reset-btn" class="btn btn-warning">เริ่มใหม่</button>
+                </div>
+            </div>
+
+            <!-- ส่วนคะแนน -->
+            <div class="sidebar">
+                <div class="score-section card">
+                    <h3>🏆 คะแนนสูงสุดของคุณ</h3>
+                    <div id="user-highscore" class="highscore">0</div>
+                </div>
+
+                <div class="leaderboard-section card">
+                    <h3>📊 ตารางคะแนนสูงสุด</h3>
+                    <div id="leaderboard" class="leaderboard">
+                        <div class="loading">กำลังโหลด...</div>
+                    </div>
+                </div>
+
+                <div class="online-section card">
+                    <h3>🌐 สถานะระบบ</h3>
+                    <div class="online-players">
+                        <div class="player-count">✅ Server: พร้อมใช้งาน</div>
+                        <div class="player-count">✅ Database: เชื่อมต่อแล้ว</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Socket.io client -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
