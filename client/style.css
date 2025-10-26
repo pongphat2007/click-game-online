@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* การ์ด */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ฟอร์มล็อกอิน */
+.auth-form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
+}
+
+.auth-form h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+/* ปุ่ม */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+    flex: 1;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+}
+
+.btn-secondary {
+    background: #2ecc71;
+    color: white;
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background: #27ae60;
+}
+
+.btn-success {
+    background: #2ecc71;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #27ae60;
+}
+
+.btn-warning {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #e67e22;
+}
+
+.btn-logout {
+    background: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.btn-logout:hover {
+    background: #c0392b;
+}
+
+.btn:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* ข้อความ */
+.message {
+    text-align: center;
+    margin-top: 15px;
+    min-height: 20px;
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* ส่วนหัวเกม */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* เลย์เอาต์เกม */
+.game-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+/* ข้อมูลเกม */
+.game-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.info-item span:last-child {
+    color: #e74c3c;
+    font-size: 1.2em;
+}
+
+/* พื้นที่เกม */
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #34495e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* เป้าหมาย */
+.target {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #e74c3c, #c0392b);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
+}
+
+.target:hover {
+    transform: scale(1.1);
+}
+
+.target:active {
+    transform: scale(0.95);
+}
+
+/* คอนโทรล */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* สไตล์ส่วนข้าง */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.highscore {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #e74c3c;
+    margin: 10px 0;
+}
+
+/* ตารางคะแนน */
+.leaderboard {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.leaderboard-item:nth-child(odd) {
+    background: #f8f9fa;
+}
+
+.rank {
+    font-weight: bold;
+    color: #e74c3c;
+    width: 30px;
+}
+
+.username {
+    flex: 1;
+    text-align: left;
+}
+
+.score {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* ผู้เล่นออนไลน์ */
+.online-players {
+    text-align: center;
+}
+
+.player-count {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #27ae60;
+}
+
+.loading {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .auth-buttons {
+        flex-direction: column;
+    }
+    
+    .game-area {
+        height: 400px;
+    }
+}
